@@ -75,3 +75,21 @@ module.exports.editPost = errorWrapper(async (req, res) => {
         data: post
     })
 });
+
+module.exports.deletePost = errorWrapper(async (req, res) => {
+    const post = await Post.findByIdAndDelete(req.params.postId);
+    if(!post) {
+        return res.status(400).json({
+            success: false,
+            message: "Post not found with id: " + req.params.postId,
+            data: null
+        });
+    }
+    res.status(200).json({
+        success: true,
+        message: "Post deleted successfully",
+        data: {
+            name: post.title,
+        }
+    })
+});

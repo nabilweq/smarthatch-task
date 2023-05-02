@@ -42,7 +42,7 @@ const corsOptions = {
 	credentials: true,
 };
 
-//app.use(cors(corsOptions));
+//app.use(cors(corsOptions)); //uncomment this line and comment below line to enable CORS
 
 app.use(cors({
 	origin: '*'
@@ -51,7 +51,6 @@ app.use(cors({
 app.get('/', (req, res, ) => {
     res.send('API of Sign App is running successfully');
 });
-
 
 // Define Routes
 app.use('/api/v1', require('./routes/index'));
