@@ -10,7 +10,7 @@ const Post = mongoose.Schema({
         required: true
     },
     createdOn: {
-        type: String,
+        type: Date,
         required: true
     },
     search_tags: [{
@@ -18,6 +18,7 @@ const Post = mongoose.Schema({
     }],
     publish: {
         type: Boolean,
+        default: false
     },
     featured_images: [{
         type: String,

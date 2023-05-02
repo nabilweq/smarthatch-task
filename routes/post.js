@@ -3,17 +3,16 @@ const multer = require('multer');
 
 const upload = multer()
 
-const { createPost } = require('../controllers/post')
+const { createPost, getAllPosts } = require('../controllers/post')
 
 router.post('/', upload.fields([
     {
         name:'featured_images',
-        maxCount:1
     },
     {
         name: 'gallery_images',
-         maxCount:1
     }
 ]), createPost);
+router.get('/', getAllPosts);
 
 module.exports = router;

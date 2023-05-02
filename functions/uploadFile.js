@@ -22,7 +22,7 @@ async function uploadFiles(files) {
   
     await Promise.all(promises);
     //console.log('All files uploaded successfully');
-    return locations[0];
+    return locations;
 };
 
 module.exports = uploadFiles;
