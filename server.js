@@ -49,7 +49,7 @@ app.use(cors({
 }));
 
 app.get('/', (req, res, ) => {
-    res.send('API of Sign App is running successfully');
+    res.send('API of SmartHatch task is running successfully');
 });
 
 // Define Routes
